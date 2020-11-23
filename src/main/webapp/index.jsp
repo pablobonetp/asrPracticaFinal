@@ -10,6 +10,7 @@
 <h1>Ejemplo de Proyecto de ASR con Cloudant ahora con DevOps</h1>
 <hr />
 <h2><i>Ejemplo en clase</i></h2>
+<h2><i>Ejemplo en clase</i></h2>
 <ul>
 <li><a href="listar">Listar</a></li>
 <li><a href="insertar?palabra=hola">Insertar</a></li>
