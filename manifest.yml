@@ -5,9 +5,11 @@ applications:
   path: target/asrTomcatEjemploCloudantTranslator.war
   memory: 640M
   instances: 1
-  host: asrTomcatEjemploCloudantTranslator
+  host: asrpracticafinalpbp
   domain: eu-gb.mybluemix.net
   buildpack: liberty-for-java_v3_50-20201019-1521
   services:
-  - cloudantNoSQL-DCB
-  - Language Translator-mf
+  - cloudantNoSQLDB
+  - Speech to Text-33
+  - Text to Speech-4q
+  - language_translator

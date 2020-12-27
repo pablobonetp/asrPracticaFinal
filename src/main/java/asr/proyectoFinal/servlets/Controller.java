@@ -21,6 +21,8 @@ import javax.servlet.http.HttpServletResponse;
 import asr.proyectoFinal.dao.CloudantPalabraStore;
 import asr.proyectoFinal.dominio.Palabra;
 import asr.proyectoFinal.services.Traductor;
+import asr.proyectoFinal.services.Text2Speech;
+import asr.proyectoFinal.services.Speech2Text;
 
 /**
  * Servlet implementation class Controller
@@ -69,6 +71,12 @@ public class Controller extends HttpServlet {
 					    out.println(String.format("Almacenada la palabra: %s", palabra.getName()));			    	  
 					}
 				}
+				break;
+			case "/hablar":
+				String texto = request.getParameter("texto");
+				out.println(texto);
+				Text2Speech.text2speech(texto);
+				//Speech2Text.speech2text();
 				break;
 		}
 		out.println("</html>");

@@ -7,13 +7,21 @@
 <title>Proyecto ASR new...</title>
 </head>
 <body>
-<h1>Ejemplo de Proyecto de ASR con Cloudant ahora con DevOps</h1>
+<h1>ASR PRACTICA FINAL</h1>
 <hr />
-<h2><i>Ejemplo en clase</i></h2>
-<h2><i>Ejemplo en clase</i></h2>
-<ul>
-<li><a href="listar">Listar</a></li>
-<li><a href="insertar?palabra=hola">Insertar</a></li>
-</ul>
+<form action="listar" method="post">
+Contenido de la Base de Datos
+<input type="submit" value="Mostrar"></input>
+</form>
+<form action="insertar" method="post">
+Traducir e Insertar Palabra:
+<input type="text" name="palabra"></input>
+<input type="submit" value="Insertar"></input>
+</form>
+<form action="hablar" method="post">
+Texto a Convertir
+<input type="text" name="texto"></input>
+<input type="submit" value="Convertir"></input>
+</form>
 </body>
 </html>
