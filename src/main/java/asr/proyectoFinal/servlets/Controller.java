@@ -34,7 +34,7 @@ public class Controller extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
 		PrintWriter out = response.getWriter();
-		out.println("<html><head><meta charset=\"UTF-8\"></head><body>");
+		out.println("<html><head><link rel=\"stylesheet\" href=\"Style.css\"><meta charset=\"UTF-8\"></head><body>");
 		
 		CloudantPalabraStore store = new CloudantPalabraStore();
 		

@@ -3,11 +3,15 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<link rel="stylesheet" href="Style.css">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Proyecto ASR new...</title>
 </head>
 <body>
+<div class="page">
+<div class="cabecera">
 <h1>ASR PRACTICA FINAL</h1>
+</div>
 <hr />
 <form action="listar" method="post">
 Contenido de la Base de Datos
@@ -23,5 +27,7 @@ Texto a Convertir
 <input type="text" name="texto"></input>
 <input type="submit" value="Convertir"></input>
 </form>
+</div>
+<hr />
 </body>
 </html>
