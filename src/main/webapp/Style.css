@@ -3,7 +3,6 @@
 body
 {
 	font-family: Avenir;
-	
 }
 
 div.page{
@@ -13,7 +12,7 @@ div.page{
 div.cabecera{
 	display : inline-block;
 	width: 100%;
- 	height: 45px;
+ 	height: 100px;
  	background-color: grey;
 }
 h1 {

@@ -24,11 +24,11 @@ public class Traductor
 		else
 			model="en-es";
 
-		Authenticator authenticator = new IamAuthenticator("S0Idkaeg_kAmEIjcY9o1lBw7U3UIh1gQcLHda1MVMnmX");
+		Authenticator authenticator = new IamAuthenticator("mKnwJwtLCYoYWBiXmWTKTsM5NlUU8mECR-o72rbqomfO");
 		LanguageTranslator languageTranslator = new LanguageTranslator("2018-05-01", authenticator);
 
 		//languageTranslator.setServiceUrl("https://gateway-lon.watsonplatform.net/language-translator/api");
-		languageTranslator.setServiceUrl("https://api.eu-gb.language-translator.watson.cloud.ibm.com/instances/4aa747dd-35fd-433a-8035-e4f75e822525");
+		languageTranslator.setServiceUrl("https://api.eu-gb.language-translator.watson.cloud.ibm.com/instances/bf0b4f18-da7b-4042-8102-b67e48438d5d");
 		
 		TranslateOptions translateOptions = new TranslateOptions.Builder()
 		  .addText(palabra)

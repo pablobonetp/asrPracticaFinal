@@ -1,9 +1,14 @@
 package asr.proyectoFinal.services;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 
 import com.ibm.cloud.sdk.core.security.IamAuthenticator;
 import com.ibm.watson.text_to_speech.v1.TextToSpeech;
@@ -12,13 +17,13 @@ import com.ibm.watson.text_to_speech.v1.util.WaveUtils;
 
 public class Text2Speech 
 {
-	public static void text2speech(String audio)
+	public static void text2speech(String text, String audio)
 	{
-		IamAuthenticator authenticator = new IamAuthenticator("3oK6gtojZsmD0jCS2HGHFUBWb3v6Yv5meYFbNcuVBbjY");
+		IamAuthenticator authenticator = new IamAuthenticator("JgGHK2SduTgOhjmztMxgF7thJpb0lj9oI5evD4Wsr6oq");
 		TextToSpeech textToSpeech = new TextToSpeech(authenticator);
-		textToSpeech.setServiceUrl("https://api.eu-gb.text-to-speech.watson.cloud.ibm.com/instances/0d929505-c265-4e56-9a99-dfa5a2789baf");
+		textToSpeech.setServiceUrl("https://api.eu-gb.text-to-speech.watson.cloud.ibm.com/instances/235774ea-1f98-450f-899d-f441e9e93fc5");
 
-		String text = "It's beginning to look a lot like Christmas";
+		//String text = "It's beginning to look a lot like Christmas";
 		
 		 try {
 		       SynthesizeOptions synthesizeOptions =
@@ -32,7 +37,7 @@ public class Text2Speech
 		       textToSpeech.synthesize(synthesizeOptions).execute().getResult();
 		       InputStream in = WaveUtils.reWriteWaveHeader(inputStream);
 
-		       OutputStream out = new FileOutputStream("/Users/pablobonet/" + audio + ".wav");
+		       OutputStream out = new FileOutputStream("/Users/pablobonet/Desktop/" + audio + ".wav");
 		       byte[] buffer = new byte[1024];
 		       int length;
 		       while ((length = in.read(buffer)) > 0) {
@@ -45,5 +50,20 @@ public class Text2Speech
 		      } catch (IOException e) {
 		        e.printStackTrace();
 		      }
+	}
+	
+	public static void play(String audio)
+	{
+		try 
+		{
+			AudioInputStream a = AudioSystem.getAudioInputStream(new File("/Desktop/" + audio + ".wav"));
+			Clip clip = AudioSystem.getClip();
+			clip.open(a);
+			clip.start();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
 	}
 }

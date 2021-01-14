@@ -27,7 +27,7 @@ import asr.proyectoFinal.services.Speech2Text;
 /**
  * Servlet implementation class Controller
  */
-@WebServlet(urlPatterns = {"/listar", "/insertar", "/hablar"})
+@WebServlet(urlPatterns = {"/listar", "/insertar", "/text2speech", "/speech2text"})
 public class Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -72,10 +72,18 @@ public class Controller extends HttpServlet {
 					}
 				}
 				break;
-			case "/hablar":
+			case "/text2speech":
+				String archivo = request.getParameter("archivo");
 				String texto = request.getParameter("texto");
-				out.println(texto);
-				Text2Speech.text2speech(texto);
+				Text2Speech.text2speech(texto, archivo);
+				out.println("Archivo "+ archivo + ".wav " + "Creado");
+				//Speech2Text.speech2text();
+				break;
+			case "/speech2text":
+				String texto1 = request.getParameter("archivobuscar");
+				String s =  Speech2Text.speech2text(texto1);
+				out.println("Contenido del archivo: " + s);
+				//Text2Speech.text2speech(texto1);
 				//Speech2Text.speech2text();
 				break;
 		}
